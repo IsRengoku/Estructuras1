@@ -7,11 +7,9 @@ public class main{
     public static void main(String[] args){
         LinkedList lista = new LinkedList();
         LinkedList<empleado> empleados = new LinkedList<empleado>();
-        lista.add("pedro");
-        lista.add(234);
-        System.out.println(lista);
+        int i = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad empleados"));
 
-        for (int index = 0; index < 2; index++) {
+        for (int index = 0; index < i; index++) {
             empleado emp = new empleado(null, null, null, index, null);
             emp.setNombre(JOptionPane.showInputDialog("Ingrese el nombre"));
             emp.setApellido(JOptionPane.showInputDialog("Ingrese el apellido"));
@@ -21,7 +19,11 @@ public class main{
             empleados.add(emp);
         }
         for (empleado e : empleados) {
-            JOptionPane.showMessageDialog(null, e.getNombre() + "\n" + e.getApellido() + "\n" + e.getDireccion() + "\n" + e.getEdad() + "\n" + e.getCargo());
+            JOptionPane.showMessageDialog(null,"Nombre: " + e.getNombre() + "\n" +
+             "Apellido: " + e.getApellido() + 
+             "\n" + "Dirección: " + e.getDireccion() + 
+             "\n" + "Edad: " + e.getEdad() + 
+             "\n" + "Cargo: " + e.getCargo());
         }
     }
 }
